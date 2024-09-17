@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .home{
+            height: 100vh;
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .home .main{
+            border: 2px solid rgb(15, 15, 15);
+            padding: 30px 30px;
+            border-radius: 20px;
+            text-align: center;
+            font-size:xx-large;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+        }
+        .home .main .btns{
+            padding: 5px;
+        }
+        .home .main .btns button{
+            width: 90px;
+            height: 40px;
+            border-radius: 20px;
+            padding:5px 10px; 
+            border: 0px solid transparent;
+        }
+        .Inc{
+            color: white;
+            background-color: rgb(67, 177, 67);
+            cursor: pointer;
+        }
+        .Reset{
+            color: rgb(8, 8, 8);
+            background-color: rgb(231, 231, 81);
+            cursor: pointer;
+        }
+        .Dec{
+            color: white;
+            background-color: red;
+            cursor: pointer;
+        }
+        h1{
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Counter</h1>
+    <div class="home">
+        
+        <div class="main">
+            <h2 class="value">0</h2>
+            <div class="btns">
+                <button class="Inc"><i class="fa-solid fa-arrow-trend-up"></i> Inc</button>
+                <button class="Reset"><i class="fa-solid fa-arrow-rotate-right"></i> Reset</button>
+                <button class="Dec"><i class="fa-solid fa-arrow-trend-down"></i> Dec</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let IncButton = document.querySelector(".Inc")
+        let DecButton = document.querySelector(".Dec")
+        let ResetButton = document.querySelector(".Reset")
+        let ValueButton = document.querySelector(".value")
+        
+        let value = 0;
+
+        IncButton.onclick = function(){
+            ++value
+            ValueButton.textContent = value
+            if(value>0){
+                ValueButton.style.color = "green"
+            }
+            else if(value<0){
+                ValueButton.style.color = "red"
+            }
+            else{
+                ValueButton.style.color = "white"
+            }
+        }
+
+        ResetButton.onclick = function(){
+            value = 0
+            ValueButton.textContent = value
+            ValueButton.style.color = "black"   
+        }
+
+        DecButton.onclick = function(){
+            --value
+            ValueButton.textContent = value
+            if(value>0){
+                ValueButton.style.color = "green"
+            }
+            else if(value<0){
+                ValueButton.style.color = "red"
+            }
+            else{
+                ValueButton.style.color = "white"
+            }
+        }
+    </script>
+</body>
+</html>

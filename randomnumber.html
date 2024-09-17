@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random-Number</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .parent{
+            background-color: darkgray;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .parent .inputgroup{
+            border: 1px solid;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .parent .inputgroup input{
+            border: 1px solid;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #p{
+            padding-bottom: 10px;
+        }
+        #result{
+            text-align: center;
+        }
+        #heading{
+            text-align: center;
+            background-color: black;
+            color: white;
+            height: 10vh;
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="heading">Number_Guessing_Game</h1>
+    <div class="parent">    
+        <div class="inputgroup">
+            <p id="p">Enter The Number</p>
+            <input type="search" name="" id="userinput">
+            <input type="button" value="Check" onclick="Gussnumber()">    
+        </div>   
+    </div>
+    <h1 id="result">Game Result Here...</h1>
+
+
+    <script>
+        let RandomNumber = Math.round(Math.random()*100)
+        let result = document.getElementById('result')
+
+        function Gussnumber(){
+            let GussedNumber = parseInt(document.getElementById('userinput').value)
+            if (GussedNumber < RandomNumber){
+                result.textContent = 'Gussed Number is loss, Try Agian!!'
+                result.style.background = 'yellow'
+            }
+            else if(GussedNumber > RandomNumber){
+                result.textContent = 'Gussed Number is high, Try Agian!!'
+                result.style.background = 'orange'
+
+            }
+            else if(GussedNumber === RandomNumber){
+                result.textContent = 'Congrats! You Got It!!'
+                result.style.background = 'green'
+                result.style.color = 'white'
+
+            }
+            else{
+                result.textContent = 'Enter the Number Not a String!!!'
+                result.style.background = 'red'
+                result.style.color = 'white'
+
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat-Example</title>
+    
+    <style>
+        *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.parent{
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.parent #bulb-img{
+    width: 100px;
+}
+.parent #cat-img{
+    width: 100px;
+}
+.parent .btns-box{
+    background-color: white;
+    padding: 20px 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.parent .btns-box button{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border: 1px solid transparent;
+}
+.parent .btns-box #switch-on{
+    background-color: rgb(158, 157, 157);
+}
+.parent .btns-box #switch-off{
+    background-color: red;
+}
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png" alt="" id="bulb-img">
+        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-img.png" alt="" id="cat-img">
+        <div class="btns-box">
+            <h2 id="ss">Switch On</h2>
+            <button id="switch-on" onclick="SwitchOn()">ON</button>
+            <button id="switch-off" onclick="SwitchOff()">OFF</button>
+
+        </div>
+    </div>
+
+    <script>
+        let BulbImg = document.getElementById("bulb-img")
+let CatImg = document.getElementById("cat-img")
+let SwitchStatus = document.getElementById("ss")
+let OnSwitch = document.getElementById("switch-on")
+let OffSwitch = document.getElementById("switch-off")
+
+function SwitchOn(){
+    BulbImg.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png"
+    CatImg.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-img.png"
+    SwitchStatus.textContent="Switch On"
+    OnSwitch.style.backgroundColor = "gray"
+    OnSwitch.style.border
+    OnSwitch.style.cursor = "no-drop"
+    OffSwitch.style.backgroundColor = "red"
+    OffSwitch.cursor= "Pointer"
+    
+
+}
+function SwitchOff(){
+    BulbImg.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png"
+    CatImg.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-eyes-img.png"
+    SwitchStatus.textContent="Switch On"
+    OffSwitch.style.backgroundColor = "gray"
+    OffSwitch.style.border
+    OffSwitch.style.cursor = "no-drop"
+    OnSwitch.style.backgroundColor = "green"
+    OnSwitch.cursor= "Pointer"
+
+}
+    </script>
+</body>
+</html>
